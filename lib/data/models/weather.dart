@@ -12,7 +12,7 @@ class Weather extends Equatable {
     required this.lastUpdate,
   });
 
-  factory Weather.fromJason(Map<String, dynamic> json) {
+  factory Weather.fromJson(Map<String, dynamic> json) {
     final weather = json['weather'][0];
     final main = json['main'][0];
 
