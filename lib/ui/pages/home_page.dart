@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
     final formatedString = description.titleCase;
     return Text(
       formatedString,
-      style: TextStyle(fontSize: 24.0),
+      style: const TextStyle(fontSize: 24.0),
       textAlign: TextAlign.center,
     );
   }
@@ -155,7 +155,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Text(
                   "(${state.weather.country})",
-                  style: const TextStyle(fontSize: 18.0),
+                  style: const TextStyle(
+                    fontSize: 18.0,
+                  ),
                 ),
               ],
             ),
