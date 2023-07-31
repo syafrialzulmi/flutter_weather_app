@@ -51,8 +51,7 @@ class WeatherApiServices {
   Future<Weather> getWeather(DirecGeocoding directGeocoding) async {
     final Uri uri = Uri(
       scheme: 'https',
-      host:
-          'api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}',
+      host: kAPiHost,
       path: 'data/2.5/weather',
       queryParameters: {
         'lat': '${directGeocoding.lat}',
@@ -65,11 +64,13 @@ class WeatherApiServices {
       final http.Response response = await httpClient.get(uri);
 
       final weatherJson = json.decode(response.body);
+      print(weatherJson);
 
       final Weather weather = Weather.fromJson(weatherJson);
 
       return weather;
     } catch (e) {
+      print(e);
       rethrow;
     }
   }
